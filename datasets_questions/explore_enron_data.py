@@ -13,10 +13,19 @@
 
     enron_data["SKILLING JEFFREY K"]["bonus"] = 5600000
     
-"""
+    de"""
 
 import pickle
+import math
+enron_data = pickle.load(open("../final_project/final_project_dataset_unix.pkl", "rb"))
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
+# men = ["SKILLING JEFFREY K", "LAY KENNETH L", "FASTOW ANDREW S" ]
 
+# x= { item: enron_data[item]["total_payments"] for item in men}
+
+x = 0
+for key in enron_data:
+    if enron_data[key]["total_payments"]!='NaN':
+        x+=1
+print(x)
