@@ -28,9 +28,27 @@ plt.show()
 ################################################################################
 
 
-### your code here!  name your classifier object clf if you want the 
-### visualization code (prettyPicture) to show you the decision boundary
+from sklearn.neighbors import KNeighborsClassifier
 
+import numpy as np
+from time import time
+import sys
+sys.path.append("../tools/")
+
+clf = KNeighborsClassifier(n_neighbors=4)
+t0 = time()
+clf.fit(features_train, labels_train)
+print ("training time:", round(time()-t0, 3), "s")
+
+t0 = time()
+predictions = clf.predict(features_test)
+# unique, counts = np.unique(predictions, return_counts=True)
+# print(dict(zip(unique, counts)))
+
+
+print ("Predicting time:", round(time()-t0, 3), "s")
+
+print ("Score: ---- : ", clf.score(features_test, labels_test))
 
 
 
