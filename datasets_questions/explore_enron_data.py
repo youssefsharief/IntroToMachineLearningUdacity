@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+import pickle
+from poi_email_addresses import poiEmails
 
 """ 
     Starter code for exploring the Enron dataset (emails + finances);
@@ -15,17 +16,32 @@
     
     de"""
 
-import pickle
-import math
-enron_data = pickle.load(open("../final_project/final_project_dataset_unix.pkl", "rb"))
 
 
 # men = ["SKILLING JEFFREY K", "LAY KENNETH L", "FASTOW ANDREW S" ]
 
 # x= { item: enron_data[item]["total_payments"] for item in men}
 
-x = 0
-for key in enron_data:
-    if enron_data[key]["total_payments"]!='NaN':
-        x+=1
-print(x)
+def getNumberOfEmployees():
+    enron_data = pickle.load(open("../final_project/final_project_dataset_unix2.pkl", "rb"))
+    return len([employee for employee in enron_data])
+
+def getNumberOfEmployeesWithTotalPayments():
+    enron_data = pickle.load(open("../final_project/final_project_dataset_unix2.pkl", "rb"))
+    return len([employee for employee in enron_data if enron_data[employee]["total_payments"] != 'NaN'])
+
+
+def getNumberOfPersonsOfInterests():
+    enron_data = pickle.load(open("../final_project/final_project_dataset_unix2.pkl", "rb"))
+    return len([employee for employee in enron_data if enron_data[employee]["poi"] == 1])
+
+def getNumberOfPersonsOfInterestsInTxt():
+    f = open("../final_project/poi_names.txt", "r")
+    lines = f.readlines()
+    return len(poiEmails())
+
+def getNumberOfFeatures():
+    enron_data = pickle.load(open("../final_project/final_project_dataset_unix2.pkl", "rb"))
+    return len([employee for employee in enron_data if enron_data[employee]["total_payments"] != 'NaN'])
+
+print(getNumberOfPersonsOfInterestsInTxt())

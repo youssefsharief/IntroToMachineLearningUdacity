@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+from time import time
+from email_preprocess import preprocess
 
 """ 
     This is the code to accompany the Lesson 1 (Naive Bayes) mini-project. 
@@ -10,10 +12,6 @@
     Chris has label 1
 """
     
-import sys
-from time import time
-sys.path.append("../tools/")
-from email_preprocess import preprocess
 
 
 ### features_train and features_test are the features for the training

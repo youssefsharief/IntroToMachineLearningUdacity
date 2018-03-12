@@ -7,6 +7,9 @@ import pickle
 
 from outlier_cleaner import outlierCleaner
 from sklearn.cross_validation import train_test_split
+from sklearn import linear_model
+
+reg = linear_model.LinearRegression()
 
 
 # load up some practice data with outliers in it

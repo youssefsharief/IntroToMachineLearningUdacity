@@ -17,14 +17,14 @@ import sys
 import pickle
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
-FILE_DEST = "../final_project/final_project_dataset_modified_unix.pkl"
+FILE_DEST = "../final_project/final_project_dataset_modified_unix2.pkl"
 dictionary = pickle.load(open(FILE_DEST, "rb"))
 
 ### list the features you want to look at--first item in the 
 ### list will be the "target" feature
 features_list = ["bonus", "long_term_incentive"]
 
-data = featureFormat( dictionary, features_list, remove_any_zeroes=True, sort_keys="../tools/python2_lesson06_keys_unix.pkl")
+data = featureFormat( dictionary, features_list, remove_any_zeroes=True, sort_keys="../tools/python2_lesson06_keys_unix2.pkl")
 target, features = targetFeatureSplit( data )
 
 ### training-testing split needed in regression, just like classification
