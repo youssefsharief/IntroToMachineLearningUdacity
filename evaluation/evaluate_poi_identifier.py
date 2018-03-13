@@ -68,6 +68,8 @@ def main():
     preds = fit_and_predict(features_train, labels_train, features_test, labels_test)
     no_of_pois(preds, labels_test)
 
-predictions = [0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1]
-true_labels = [0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0]
-no_of_pois(predictions, true_labels)
+main()
+
+# predictions = [0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1]
+# true_labels = [0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0]
+# no_of_pois(predictions, true_labels)
