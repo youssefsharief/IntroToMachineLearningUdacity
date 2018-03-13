@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 
 """ 
     A general tool for converting data from the

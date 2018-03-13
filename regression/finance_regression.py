@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ 
 
 """
     Starter code for the regression mini-project.

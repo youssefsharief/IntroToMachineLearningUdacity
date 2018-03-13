@@ -10,3 +10,4 @@ my_dataset.pkl
 my_feature_list.pkl
 feature_selection/word_data_overfit.pkl
 final_project/emails_by_address/
+final_project/*.png

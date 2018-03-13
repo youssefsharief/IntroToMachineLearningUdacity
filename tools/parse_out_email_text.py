@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ 
 
 from nltk.stem.snowball import SnowballStemmer
 import string

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+  
 
 """ a basic script for importing student's POI identifier,
     and checking the results that they get from it 

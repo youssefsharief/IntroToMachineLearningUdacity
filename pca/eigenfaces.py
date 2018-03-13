@@ -59,8 +59,7 @@ print("n_classes: {0}".format(n_classes))
 
 ###############################################################################
 # Split into a training and testing set
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
 ###############################################################################
 # Compute a PCA (eigenfaces) on the face dataset (treated as unlabeled
@@ -72,8 +71,7 @@ n_components = 250
 # 150 0.85
 # 250  0.83
 
-print("Extracting the top {0} eigenfaces from {1} faces".format(
-    n_components, X_train.shape[0]))
+print("Extracting the top {0} eigenfaces from {1} faces".format(n_components, X_train.shape[0]))
 t0 = time()
 pca = RandomizedPCA(n_components=n_components, whiten=True).fit(X_train)
 print("done in {0:.3f}s".format(time() - t0))

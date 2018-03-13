@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\evaluation",
+    "\\feature_selection",
+    "\\final_project",
+    "\\pca",
+    "\\text_learning",
+    "\\tools",
+    "\\validation"
+  ],
+  "SelectedNode": "\\tools\\dos2unix.py",
+  "PreviewInSolutionExplorer": false
+}

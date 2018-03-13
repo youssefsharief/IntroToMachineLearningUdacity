@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+  
 
 import pickle
 import numpy
@@ -23,8 +23,7 @@ from sklearn import cross_validation
 features_train, features_test, labels_train, labels_test = cross_validation.train_test_split(word_data, authors, test_size=0.1, random_state=42)
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5,
-                             stop_words='english')
+vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5, stop_words='english')
 features_train = vectorizer.fit_transform(features_train)
 features_test  = vectorizer.transform(features_test).toarray()
 
@@ -35,9 +34,22 @@ features_test  = vectorizer.transform(features_test).toarray()
 features_train = features_train[:150].toarray()
 labels_train   = labels_train[:150]
 
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+clf = DecisionTreeClassifier(min_samples_split=40)
 
+clf.fit(features_train, labels_train)
+predictions = clf.predict(features_test)
+unique, counts = np.unique(predictions, return_counts=True)
+print(dict(zip(unique, counts)))
+print ("Score: ---- : ", clf.score(features_test, labels_test))
 
-### your code goes here
+l = []
+for index, val in enumerate(clf.feature_importances_):
+    if val > 0.2:
+        l.append([val, index])
+print(l)
+print(features_train[l[1]])
 
 
 

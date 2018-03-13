@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+  
 from time import time
 from email_preprocess import preprocess
 
